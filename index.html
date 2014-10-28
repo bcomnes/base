@@ -1,0 +1,15 @@
+---
+---
+{% if paginator.posts %}
+<ol>
+{% for page in paginator.posts %}
+<li>
+  <article>
+    {% include post-min.html %}
+  </article>
+</li>
+{% endfor %}
+</ol>
+{% else %}
+<p>No published posts.</p>
+{% endif %}

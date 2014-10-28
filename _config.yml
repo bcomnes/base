@@ -1,0 +1,74 @@
+# ==== Jekyll Site Vars ====
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            Base
+tagline:          A simple base site
+url:              http://bret.io/base
+hostname:         bret.io
+paginate:         10
+baseurl:          /base
+author: &author
+  name:           Bret Comnes
+  url:            https://bret.io
+  email:          bcomnes@gmail.com
+
+include:
+  - ".well-known"
+  - ".htaccess"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LISCENCE
+  - ".travis.yml"
+  - ".gitignore"
+
+# Assets
+sass:
+  sass_dir:          _scss
+  style:            :compressed
+
+defaults:
+  - scope:
+      path: ""
+    values: *author
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "drafts"
+    values:
+      layout: "post"
+
+# ====Custom vars====
+version:          1.0.0
+github:
+  repo:           https://github.com/bcomnes/base
+
+# Le Indieweb
+webmention:       http://pingback.me/bcomnes/webmention
+micropub:         https://ugitpub.herokuapp.com/micropub
+token_endpoint:   https://indieauth.com/auth
+authorization_endpoint:   https://tokens.oauth.net/token
+
+# Legacy
+openid_server:    https://indieauth.com/openid
+pingback:         http://pingback.me/bcomnes/xmlrpc
+
+# TODO: Search Tools
+google:
+  verification:   null
+  analytics:      null
+bing:             null
