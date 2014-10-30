@@ -7,29 +7,30 @@
 <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
 
 <!-- Icons -->
-<link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/media/photo.png">
 <link rel="shortcut icon" href="{{ site.baseurl }}/media/photo.png">
+<link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/media/photo.png">
 
 <!-- RSS -->
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.baseurl }}/atom.xml">
 
 <!-- Le Indiweb-->
-<link rel="webmention" href="{{ site.webmention }}" />
-<link rel="micropub" href="{{ site.micropub }}" />
-<link rel="authorization_endpoint" href="{{ site.authorization_endpoint }}">
-<link rel="token_endpoint" href="{{ site.token_endpoint }}">
+{% if site.webmention %}<link rel="webmention" href="{{ site.webmention }}" />{% endif %}
+{% if site.micropub %}<link rel="micropub" href="{{ site.micropub }}" />{% endif %}
+{% if site.authorization_endpint %}<link rel="authorization_endpoint" href="{{ site.authorization_endpoint }}">{% endif %}
+{% if site.token_endpoint %}<link rel="token_endpoint" href="{{ site.token_endpoint }}">{% endif %}
 
 <!-- Legacy-->
-<link rel="openid.server" href="{{ site.openid_server }}" />
-<link rel="openid.delegate" href="{{ site.url }}" />
-<link rel="pingback" href="{{ site.pingback }}" />
+{% if site.openid_server %}<link rel="openid.server" href="{{ site.openid_server }}" />
+<link rel="openid.delegate" href="{{ site.url }}" />{% endif %}
+{% if site.pingback %}<link rel="pingback" href="{{ site.pingback }}" />{% endif %}
 
 <!-- TODO: Search Verification-->
 
 <!-- Page Specific Head-->
-
+{% include title.liquid %}
+{% include excerpt.liquid %}
 <!-- Meta -->
-<title><!-- TODO: Title Logic--></title>
-<meta name="description" content="TODO: Description logic">
-<meta name="author" content="{{ author.name }}">
+<title>{{ title }}</title>
+{% if excerpt %}<meta name="description" content="{{ excerpt }}">{% endif %}
+{% if page.author %}<meta name="author" content="{{ page.author.name }}">{% endif %}
 <!-- TODO: canonical logic-->

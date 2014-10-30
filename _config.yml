@@ -6,14 +6,14 @@ relative_permalinks: true
 # Setup
 title:            Base
 tagline:          A simple base site
-url:              http://bret.io/base
-hostname:         bret.io
+url:              http://bret.io
 paginate:         10
 baseurl:          /base
 author: &author
   name:           Bret Comnes
-  url:            https://bret.io
+  url:            http://bret.io
   email:          bcomnes@gmail.com
+  photo:          http://www.gravatar.com/avatar/8d8b82740cb7ca994449cccd1dfdef5f?s=500
 
 include:
   - ".well-known"
@@ -35,7 +35,8 @@ sass:
 defaults:
   - scope:
       path: ""
-    values: *author
+    values:
+      author: *author
   - scope:
       path: ""
       type: "pages"

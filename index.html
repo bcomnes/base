@@ -4,9 +4,21 @@
 <ol>
 {% for page in paginator.posts %}
 <li>
-  <article>
-    {% include post-min.html %}
-  </article>
+<article>
+
+<div class="main">
+{{ page.content }}
+</div>
+
+<footer>
+
+<a href="{{ site.baseurl}}{{ page.url }}">
+<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+</a>
+
+</footer>
+
+</article>
 </li>
 {% endfor %}
 </ol>

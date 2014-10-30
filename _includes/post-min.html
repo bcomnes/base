@@ -2,5 +2,7 @@
 {% if content %}{{ content }}{% else %}{{ page.content }}{% endif %}
 </div>
 <footer>
-<!-- TODO: Meta data -->
+<a {% if content %}rel="bookmark"{% endif %} href="{{ site.baseurl}}{{ page.url }}">
+<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+</a>
 </footer>

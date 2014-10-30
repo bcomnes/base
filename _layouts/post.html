@@ -1,12 +1,26 @@
 ---
 layout: default
+title: null
 ---
 
 <article>
 
 <header>
-<!-- TODO: H-card -->
+<a class="h-card" href="{{ page.author.url }}">
+<img width="50" height="50" alt="{{ page.author.name }}" src="{{ page.author.photo }}" />
+<strong>{{ page.author.name }}</strong>
+<span>{{ page.author.url | remove: 'http://' }}</span>
+</a>
 </header>
-{% include post-min.html %}
+
+<div class="main">
+{{ content }}
+</div>
+
+<footer>
+<a rel="bookmark" href="{{ site.baseurl}}{{ page.url }}">
+<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+</a>
+</footer>
 
 </article>
