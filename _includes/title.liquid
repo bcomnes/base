@@ -7,5 +7,5 @@
 {% elsif page.name %}
 {% capture title %}{{ page.name }}{{ suffix }}{% endcapture %}
 {% elsif page.content %}
-{% capture title %}{{ page.excerpt | strip_html | truncate: 50, '…'}}{% endcapture %}
+{% capture title %}{{ page.excerpt | strip_html | truncate: 50, '…'}}{{ suffix }}{% endcapture %}
 {% endif %}
