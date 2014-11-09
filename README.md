@@ -39,6 +39,7 @@ Notes tend to be relatively short.
 title: This is an article
 date: 2014-10-28 17:34
 ---
+```
 
 Articles are notes that have a `{{ page.title }}` front-matter set.  The title is front and center and is geared towards long form.
 
@@ -54,6 +55,7 @@ items:
   - type: vimeo
   - type: audio
 ---
+```
 
 Items are entries of the `item` front-matter array.  The `{{ item[*].type }}` determines what the item is and which `_include` template to use when inserting them into the page.  Items are displayed in order above the post content.
 
