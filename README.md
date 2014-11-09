@@ -3,7 +3,7 @@ base
 
 (Working title)
 
-A base jekyll layout that is designed to pair with [gitpub](https://github.com/bcomnes/gitpub).  It aims at supporting various post types through progressive enhancement based on the presence of specific font-matter variables.  Here are some guiding design principals.
+A base jekyll layout that is designed to pair with [gitpub](https://github.com/bcomnes/gitpub).  It aims at supporting various post types through progressive enhancement based on the presence of specific front-matter variables.  Here are some guiding design principals.
 
 - All posts start as a note and can be enhanced with yaml front-matter
 - Post types are differentiated by how they are displayed
@@ -78,7 +78,7 @@ date: 2014-10-28 17:34
 ```yaml
 ---
 date: 2014-11-01 13:09
-title: Article with attatched photo
+title: Article with attached photo
 items:
   - filename: igljSlhv.jpg
     type: photo
