@@ -95,6 +95,10 @@ TODO: RSVP Item
 
 TODO: Figure out overlap between items and out-of-post-content band reply context.
 
+#### Repost Item
+
+TODO: Figure out reposts.
+
 #### Youtube Item
 
 TODO: Youtube Embed item
@@ -110,6 +114,14 @@ TODO: Audio Item
 #### Map Item
 
 TODO: Map Item Embed
+
+#### Like Item
+
+TODO: Like Item
+
+#### Bookmark Item
+
+TODO: Bookmark/linklog Item
 
 ### Syndication
 
@@ -196,4 +208,37 @@ TODO:  Use the Jekyll Data store to create a list of queryable contacts based on
 #### Full Content Reply Context
 
 TODO: Store reply context data and display reply context above reply notes.
+
+### Delete items
+
+TODO: Handle a deleted yaml object to preserve permalinks and use http equiv to indicate its deleted.
+
+## SCSS and Theming
+
+TODO: Figure out how to handle CSS and themes.  It would be nice to connect the css to a framework like bootstrap.
+
+- http://webdesign.tutsplus.com/tutorials/a-simple-responsive-mobile-first-navigation--webdesign-6074
+- http://www.bootstrapcdn.com
+- http://necolas.github.io/normalize.css/
+- http://ruby.bvision.com/blog/please-stop-embedding-bootstrap-classes-in-your-html
+- http://blog.typekit.com/2013/07/25/setting-subheads-with-css/
+- http://www.svgeneration.com
+- https://gist.github.com/bcomnes/d8153d88664a4875b592
+- http://jsbin.com/juvixufu/10/edit?html,outputin
+- http://philipwalton.github.io/solved-by-flexbox/
+- http://bennettfeely.com/flexplorer/
+-
+
+## JS Library Loading
+
+Due to the mixed content nature of the item stream, a JS library loader is needed to accommodate the flexibility of what one might want in the post stream.  See [`enhanceEach`](https://waterpigs.co.uk/notes/4WZHhH/).
+
+## Appcache
+
+TODO: Fix appcache. See [alistapart](http://alistapart.com/article/application-cache-is-a-douchebag#section7) on appcache.
+
+## Conflicting Concepts
+
+- Post geo metadata and map item potentially overlap.
+- In reply to item type, metadata in-reply-to and repost item.
 
