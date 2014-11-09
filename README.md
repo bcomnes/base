@@ -79,6 +79,22 @@ Adds a photo item above the post content.  The alt text is assigned to `{{ items
 
 TODO: Responsive Images
 
+#### Recipe Item
+
+TODO: Recipe Item
+
+#### Event Item
+
+TODO: Event Item
+
+#### RSVP Item
+
+TODO: RSVP Item
+
+#### Reply Context
+
+TODO: Figure out overlap between items and out-of-post-content band reply context.
+
 #### Youtube Item
 
 TODO: Youtube Embed item
@@ -140,7 +156,7 @@ Geo can be added to any post type.
 tags:
   - photo
   - geo
-  - items
+  - burgers
 ```
 
 The `tags` front-matter array allows posts to be tagged and displayed in the tag directory page.  Posts can have many tags.  Tags are a standard jekyll feature.  Tags do not affect the permalink of posts.
@@ -159,7 +175,7 @@ The `categories` front-matter array allows posts to be categorized and displayed
 
 ### Reply Context
 
-Reply context is meta data that is added to the front-matter to indicate that the post is in reply to another permalink.  Can be added to a note.
+Reply context is meta data that is added to the front-matter to indicate that the post is in reply to another permalink.  Can be added to a note.  Turning this into an item is a possibility.
 
 TODO:  Taylor reply context display for use with Articles.
 
