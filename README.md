@@ -13,11 +13,13 @@ A base jekyll layout that is designed to pair with [gitpub](https://github.com/b
 - Item data should be provided externally from git
 - Posts can be enhanced with optional meta-data
 
-## Notes
+## Base Front-Matter Definitions and Behaviors
 
-The following examples and variations result in a note post format.
+### Post types
 
-### Basic Note
+The following yaml front-matter combinations will result in display differences depending on how post types are classified.
+
+#### Note
 
 ```yaml
 ---
@@ -28,23 +30,19 @@ date: 2014-10-28 17
 
 Notes require the front-matter `title` field be set to `null` in order to decouple the `title` variable from the `titleized` title it inherits from the filename.  See [jekyll/jekyll #3046](https://github.com/jekyll/jekyll/issues/3046#issuecomment-61379322).  Forgetting this wont break anything, but it will reduce the quality of the `<title>` tag in the header of note permalinks.
 
-### `in-reply-to` Note
+Notes tend to be relatively short.
+
+#### Article
 
 ```yaml
 ---
-title: null
-date: 2014-10-28 17
-in-reply-to:
-  - url: "https://snarfed.org/2013-01-16_atom_feeds_for_facebook_and_twitter"
-    domain: "snarfed.org"
+title: This is an article
+date: 2014-10-28 17:34
 ---
-```
 
-The most basic form of a reply.  Displays a simple "In Reply To: `{{ in-reply-to[*].url }}`" above the post.  TODO:  use the Jekyll Data store to create a list of queryable contacts based on the `{{ in-reply-to[*].domain }}` field in order to display information on people over domains.
+Articles are notes that have a `{{ page.title }}` front-matter set.  The title is front and center and is geared towards long form.
 
-TODO: Store reply context data and display reply context above reply notes.
-
-### Note with photo
+### Items
 
 ```yaml
 ---
@@ -52,37 +50,132 @@ date: 2014-11-01 13:08
 title: null
 items:
   - type: photo
-    filename: igljSlhv.jpg
-    name: Circle Packing
-    src: /media/igljSlhv.jpg
+  - type: youtube
+  - type: vimeo
+  - type: audio
 ---
-```
 
-Creates a post with a photo above the post content.  The alt text is assigned to `{{ items[*].name }}` or `{{ items[*].filename }}` or nothing if those values are not present.  `type` determines the include file to insert above the note text.
+Items are entries of the `item` front-matter array.  The `{{ item[*].type }}` determines what the item is and which `_include` template to use when inserting them into the page.  Items are displayed in order above the post content.
 
-## Articles
+Items can be added to any post type.
 
-Articles are notes that have a `{{ page.title }}` front-matter set.  The title is front and center and is geared towards long form.
-
-### Basic Article
+#### Photo Item (As a note)
 
 ```yaml
 ---
-title: This is an article
-date: 2014-10-28 17:34
----
-```
-### Article with photo
-
-
-```yaml
----
-date: 2014-11-01 13:09
-title: Article with attached photo
+title: null
+date: 2014-11-01 13:08
 items:
-  - filename: igljSlhv.jpg
-    type: photo
-    workPath: /media
-    src: /media/igljSlhv.jpg
+  - type: photo
+    name: Circle Packing
+    filename: igljSlhv.jpg
+    src: http://bret.io/base/media/igljSlhv.jpg
 ---
 ```
+
+Adds a photo item above the post content.  The alt text is assigned to `{{ items[*].name }}` or `{{ items[*].filename }}` or nothing if those values are not present.  Relative URLs are supported but discouraged.  A reliable data store should be used to host the photo, and fully defined URLs used to point to the URL.
+
+TODO: Responsive Images
+
+#### Youtube Item
+
+TODO: Youtube Embed item
+
+#### Vimeo Item
+
+TODO: Vimeo Embed Item
+
+#### Audio Item
+
+TODO: Audio Item
+
+#### Map Item
+
+TODO: Map Item Embed
+
+### Syndication
+
+```yaml
+syndication:
+  - name: Instagram
+    url: http://instagram.com/p/xxxxx/
+  - name: Twitter
+    url: "https://twitter.com/example/status/xxxxx"
+```
+
+The `syndication` front-matter array lists off places where the post has been syndicated to.  Syndication links are displayed as reply target suggestions as most people do not have their own website.
+
+Syndication can be added to any post type.
+
+### Client
+
+```yaml
+client:
+  id: "http://quill.p3k.io"
+  name: "Quill"
+  scope: post
+```
+
+The `client` front-matter object contains information about the client used to create the post.
+
+Client can be added to any post type.
+
+### Geo
+
+```yaml
+geo:
+  location: "geo:45.524813313,-122.681201062"
+  place-name: Portland, OR
+```
+
+The `geo` front-matter object contains information about the location the post was created at.  There is overlap/conflict with the Map item that may require resolution.  The geo information displays the `place-name`.  The location data is looking for use.
+
+Geo can be added to any post type.
+
+### Tags
+
+```yaml
+tags:
+  - photo
+  - geo
+  - items
+```
+
+The `tags` front-matter array allows posts to be tagged and displayed in the tag directory page.  Posts can have many tags.  Tags are a standard jekyll feature.  Tags do not affect the permalink of posts.
+
+### Categories
+
+```yaml
+categories:
+  - note
+  - article
+  - photo
+```
+
+The `categories` front-matter array allows posts to be categorized and displayed in the category directory page.  Posts can have many category, but this is discouraged as it results in many permanents.  Posts should only have a single category.  Categories are a standard jekyll feature.  Tags affect the permalink of posts and can be assigned to posts by housing additional `_post` directories under category folders.
+
+
+### Reply Context
+
+Reply context is meta data that is added to the front-matter to indicate that the post is in reply to another permalink.  Can be added to a note.
+
+TODO:  Taylor reply context display for use with Articles.
+
+#### Basic Reply Context
+
+```yaml
+in-reply-to:
+  - url: "https://snarfed.org/2013-01-16_atom_feeds_for_facebook_and_twitter"
+    domain: "snarfed.org"
+```
+
+Displays a simple "In Reply To: `{{ in-reply-to[*].url }}`" above the post.
+
+#### Contact Reply Context
+
+TODO:  Use the Jekyll Data store to create a list of queryable contacts based on the `{{ in-reply-to[*].domain }}` field in order to display information on people over domains.
+
+#### Full Content Reply Context
+
+TODO: Store reply context data and display reply context above reply notes.
+
