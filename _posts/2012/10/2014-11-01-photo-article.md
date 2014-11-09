@@ -1,6 +1,6 @@
 ---
 date: 2014-11-01 13:09
-title: Article with attatched photo
+title: Article with attached photo
 items:
   - filename: igljSlhv.jpg
     type: photo

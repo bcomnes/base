@@ -3,7 +3,7 @@ base
 
 (Working title)
 
-A base jekyll layout for use with [gitpub](https://github.com/bcomnes/gitpub).  It aims at supporting various post types through progressive enhancement based on the presence of specific font-matter variables.  Here are some guiding design principals.
+A base jekyll layout that is designed to pair with [gitpub](https://github.com/bcomnes/gitpub).  It aims at supporting various post types through progressive enhancement based on the presence of specific font-matter variables.  Here are some guiding design principals.
 
 - All posts start as a note and can be enhanced with yaml front-matter
 - Post types are differentiated by how they are displayed
@@ -13,9 +13,9 @@ A base jekyll layout for use with [gitpub](https://github.com/bcomnes/gitpub).  
 - Item data should be provided externally from git
 - Posts can be enhanced with optional meta-data
 
-## Post Types
+## Notes
 
-The following are examples of different post types.  Most of the different front-matter variables can be mixed and matched.
+The following examples and variations result in a note post format.
 
 ### Basic Note
 
@@ -40,7 +40,9 @@ in-reply-to:
 ---
 ```
 
-The most basic form of a reply.  Displays a simple "In Reply To: `{{ in-reply-to[*].url }}`" above the post.
+The most basic form of a reply.  Displays a simple "In Reply To: `{{ in-reply-to[*].url }}`" above the post.  TODO:  use the Jekyll Data store to create a list of queryable contacts based on the `{{ in-reply-to[*].domain }}` field in order to display information on people over domains.
+
+TODO: Store reply context data and display reply context above reply notes.
 
 ### Note with photo
 
@@ -56,4 +58,31 @@ items:
 ---
 ```
 
-Creates a post with a photo above the post content.  The alt text is assigned to `{{ items[*].name }}` or `{{ items[*].filename }}` or nothing if those values are not present.
+Creates a post with a photo above the post content.  The alt text is assigned to `{{ items[*].name }}` or `{{ items[*].filename }}` or nothing if those values are not present.  `type` determines the include file to insert above the note text.
+
+## Articles
+
+Articles are notes that have a `{{ page.title }}` front-matter set.  The title is front and center and is geared towards long form.
+
+### Basic Article
+
+```yaml
+---
+title: This is an article
+date: 2014-10-28 17:34
+---
+```
+### Article with photo
+
+
+```yaml
+---
+date: 2014-11-01 13:09
+title: Article with attatched photo
+items:
+  - filename: igljSlhv.jpg
+    type: photo
+    workPath: /media
+    src: /media/igljSlhv.jpg
+---
+```
