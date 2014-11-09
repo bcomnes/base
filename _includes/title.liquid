@@ -1,7 +1,7 @@
 {% capture suffix %} • {{ site.url | remove: "http://" }}{% endcapture %}
 
 {% if page.title %}
-Specified Title: {% capture title %}{{ page.title }}{{ suffix }}{% endcapture %}
+{% capture title %}{{ page.title }}{{ suffix }}{% endcapture %}
 {% elsif page.url == '/' %}
 {% capture title %}{{ site.url | remove: "http://" }}{% endcapture %}
 {% elsif page.name %}

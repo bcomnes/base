@@ -60,14 +60,14 @@ github:
   repo:           https://github.com/bcomnes/base
 
 # Le Indieweb
-webmention:       http://pingback.me/bcomnes/webmention
+webmention:       http://webmention.io/bcomnes/webmention
 micropub:         https://ugitpub.herokuapp.com/micropub
 token_endpoint:   https://indieauth.com/auth
 authorization_endpoint:   https://tokens.oauth.net/token
 
 # Legacy
 openid_server:    https://indieauth.com/openid
-pingback:         http://pingback.me/bcomnes/xmlrpc
+pingback:         http://webmention.io/bcomnes/xmlrpc
 
 # TODO: Search Tools
 google:

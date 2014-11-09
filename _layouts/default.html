@@ -6,7 +6,9 @@
 <body>
 <!-- Default Layout-->
 
-<header>{% include header.html %}</header>
+<header>
+<a href="{{ site.baseurl }}/" title="Home">{{ site.url | remove: "http://" }}</a>
+</header>
 
 <main>{{ content }}</main>
 

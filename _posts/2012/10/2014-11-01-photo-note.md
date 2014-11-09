@@ -10,18 +10,17 @@ geo:
   place-name: Portland
 items:
   - filename: igljSlhv.jpg
-    fieldname: photo
+    type: photo
     workPath: /media/ownyourgram.com
-    src: /media/ownyourgram.com/igljSlhv.jpg
-syndicate-to:
+    src: /media/igljSlhv.jpg
+syndication:
   - name: Instagram
     url: http://instagram.com/p/tq4WtUxftO/
   - name: Twitter
     url: "https://twitter.com/bretolius/status/517695827620679680"
-tokenData:
-  client:
-    id: "http://quill.p3k.io"
-    name: "Quill"
+client:
+  id: "http://quill.p3k.io"
+  name: "Quill"
   scope: post
 ---
 

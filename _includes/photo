@@ -1,0 +1,3 @@
+{% capture src %}{% if item.src contains "http" %}{{ item.src }}{% else %}{{ site.baseurl }}{{ item.src }}{% endif %}{% endcapture %}
+
+<a href="{{ src }}"><img class="top-img" {% if item.name %}alt="{{ item.name }}"{% elsif item.filename %}alt="{{ item.filename }}"{% endif %} src="{{ src }}"/></a>

@@ -1,0 +1,7 @@
+<div class="main">
+{% for item in page.items %}
+{% include {{item.type}} %}
+{% endfor %}
+{% if content %}{{ content }}{% else %}{{ page.content }}{% endif %}
+</div>
+
