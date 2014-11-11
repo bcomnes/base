@@ -5,7 +5,7 @@
 {% for page in paginator.posts %}
 <li>
 <article>
-{% if page.title %}<a href="{{ site.baseurl }}{{ page.url }}"><h2>{{ page.title }}</h2></a>{% endif %}
+{% if page.name %}<a href="{{ site.baseurl }}{{ page.url }}"><h2>{{ page.name }}</h2></a>{% endif %}
 {% include post-main.html %}
 
 <footer>

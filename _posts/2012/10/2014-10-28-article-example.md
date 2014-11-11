@@ -1,5 +1,5 @@
 ---
-title: This is an article
+name: This is an article
 date: 2014-10-28 17:34
 ---
 

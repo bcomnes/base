@@ -1,11 +1,9 @@
 {% capture suffix %} • {{ site.url | remove: "http://" }}{% endcapture %}
 
-{% if page.title %}
-{% capture title %}{{ page.title }}{{ suffix }}{% endcapture %}
+{% if page.name %}
+{% capture title %}{{ page.name }}{{ suffix }}{% endcapture %}
 {% elsif page.url == '/' %}
 {% capture title %}{{ site.url | remove: "http://" }}{% endcapture %}
-{% elsif page.name %}
-{% capture title %}{{ page.name }}{{ suffix }}{% endcapture %}
 {% elsif page.content %}
 {% capture title %}{{ page.excerpt | strip_html | truncate: 50, '…'}}{{ suffix }}{% endcapture %}
 {% endif %}
