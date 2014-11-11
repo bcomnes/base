@@ -30,7 +30,7 @@ exclude:
 # Assets
 sass:
   sass_dir:          _scss
-  style:            compressed
+  #style:            compressed
 
 defaults:
   - scope:
