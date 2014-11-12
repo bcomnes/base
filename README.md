@@ -23,12 +23,11 @@ The following yaml front-matter combinations will result in display differences 
 
 ```yaml
 ---
-title: null
 date: 2014-10-28 17
 ---
 ```
 
-Notes require the front-matter `title` field be set to `null` in order to decouple the `title` variable from the `titleized` title it inherits from the filename.  See [jekyll/jekyll #3046](https://github.com/jekyll/jekyll/issues/3046#issuecomment-61379322).  Forgetting this wont break anything, but it will reduce the quality of the `<title>` tag in the header of note permalinks.
+Post titles are determined by the `name` front-matter variable.  If this is not set, you get a titless "note".
 
 Notes tend to be relatively short.
 
@@ -36,19 +35,20 @@ Notes tend to be relatively short.
 
 ```yaml
 ---
-title: This is an article
+name: This is an article
 date: 2014-10-28 17:34
 ---
 ```
 
-Articles are notes that have a `{{ page.title }}` front-matter set.  The title is front and center and is geared towards long form.
+Articles are notes that have the `{{ page.name }}` front-matter set.  The name is displayed front and center and is geared towards long form.  While this diverges from Jekyll convention of using `title` as the variable used to name posts (unfortunately), but it is consistent with Microformats 2 h-entry vocab.
+
+The `title` variable is strongly coupled with the titleified file name so it can't be checked for existence since it always exists!
 
 ### Items
 
 ```yaml
 ---
 date: 2014-11-01 13:08
-title: null
 items:
   - type: photo
   - type: youtube
@@ -65,7 +65,6 @@ Items can be added to any post type.
 
 ```yaml
 ---
-title: null
 date: 2014-11-01 13:08
 items:
   - type: photo
@@ -227,7 +226,6 @@ TODO: Figure out how to handle CSS and themes.  It would be nice to connect the 
 - http://jsbin.com/juvixufu/10/edit?html,outputin
 - http://philipwalton.github.io/solved-by-flexbox/
 - http://bennettfeely.com/flexplorer/
--
 
 ## JS Library Loading
 
