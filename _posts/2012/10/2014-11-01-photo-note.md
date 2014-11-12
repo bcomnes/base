@@ -1,6 +1,5 @@
 ---
 date: 2014-11-01 13:08
-title: null
 tags:
   - photo
   - geo
