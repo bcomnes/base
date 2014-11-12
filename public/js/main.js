@@ -16,7 +16,7 @@ requirejs.config({
 
 define(['require', 'prefixfree'], function(require, prefree) {
 
-  var enhanceEach = function (selector, dependencies, callback) {
+  function enhanceEach (selector, dependencies, callback) {
     var elements = all(selector);
       if (elements.length > 0) {
         require(dependencies, function () {
