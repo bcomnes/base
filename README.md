@@ -5,6 +5,12 @@ base
 
 A base jekyll layout that is designed to pair with [gitpub](https://github.com/bcomnes/gitpub).  It aims at supporting various post types through progressive enhancement based on the presence of specific front-matter variables.  Here are some guiding design principles.
 
+- Static sites should be low maintenance.
+- Static sites should be nearly free to host.
+- Static sites should be flexible to the needs of the publisher.
+- Running servers should be [mostly] optional.
+- As external services die off, the primary content should still remain in tact.
+
 - All posts start as a note and can be enhanced with yaml front-matter
 - Post types are differentiated by how they are displayed
 - Temporal posts can contain (usually) a single 'item'
@@ -12,6 +18,13 @@ A base jekyll layout that is designed to pair with [gitpub](https://github.com/b
 - Items are just meta-data that can be stored in front-matter
 - Item data should be provided externally from git
 - Posts can be enhanced with optional meta-data
+
+- Clients should only have to load a single CSS file.
+- Clients should only have to find a single script entry point.
+- External assets are kept out of the repository.
+- External assets are loaded from a CDN.
+- Layout and CSS should stand mostly on its own and not reply on a massive generalized framework.
+- Data that depends on external JS libraries should present something useful if those libraries fail to load.
 
 ## Base Front-Matter Definitions and Behaviors
 
