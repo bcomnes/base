@@ -69,3 +69,15 @@ tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
   background-color: #f9f9f9;
 }
+
+/* fragmentions */
+[fragmention] {
+    background: yellow;
+    animation: fragmention 3.5s both;
+}
+@keyframes fragmention {
+    to {
+        background:#ffffe0;
+    }
+}
+/* via tantek.com inspired by lea.verou.me/2012/12/animations-with-one-keyframe/ */
