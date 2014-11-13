@@ -12,30 +12,48 @@ layout: default
 
 <footer>
 <ul>
-<li class="date"><a rel="bookmark" href="{{ site.baseurl}}{{ page.url }}">
+
+<li class="date">
+<a rel="bookmark" href="{{ site.baseurl}}{{ page.url }}">
 <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
-</a></li>
+</a>
+</li>
 
 <li class="author"><a class="h-card" href="{{ page.author.url }}">
 <img width="50" height="50" alt="{{ page.author.name }}" src="{{ page.author.photo }}" />
 <strong>{{ page.author.name }}</strong>
 <span>{{ page.author.url | remove: 'http://' }}</span>
-</a></li>
+</a>
+</li>
 
-{% if page.geo %}<li class="geo"><a href="{{ page.geo.location }}">{% if page.geo.place-name %}{{ page.geo.place-name }}{% else %}{{ page.geo.location }}{% endif %}</a></li>{% endif %}
+{% if page.geo %}
+<li class="geo">
+<a href="{{ page.geo.location }}">{% if page.geo.place-name %}{{ page.geo.place-name }}{% else %}{{ page.geo.location }}{% endif %}</a>
+</li>
+{% endif %}
 
-{% if page.client %}<li class="client">Posted by <a href="page.client.name">{{ page.client.name }}</a></li>{% endif %}
+{% if page.client %}
+<li class="client">
+Posted by <a href="page.client.name">{{ page.client.name }}</a>
+</li>
+{% endif %}
 
-{% if page.tags %}<li class="tags">Tags:
+{% if page.tags %}
+<li class="tags">
+Tags:
 <ul>
-{% for tag in page.tags.first != null %}<li>{{ tag }}</li>{% endfor %}
+{% for tag in page.tags.first != null %}<li>
+{{ tag }}
+</li>{% endfor %}
 </ul>
 </li>
 {% endif %}
 
 {% if page.categories.first != null %}<li class="categories">Categories:
 <ul>
-{% for category in page.categories %}<li>{{ category }}</li>{% endfor %}
+{% for category in page.categories %}<li>
+{{ category }}
+</li>{% endfor %}
 </ul>
 </li>
 {% endif %}
@@ -47,14 +65,13 @@ layout: default
 <input type="hidden" name="target" value="{{ site.url }}{{ site.baseurl}}{{ page.url }}">
 <input type="submit" value="Ping!">
 </form></li>
-{% for syndicate in page.syndication %}
-<li><a href="{{ syndicate.url }}">{{ syndicate.name }}</a></li>
-{% endfor %}
+{% for syndicate in page.syndication %}<li>
+<a href="{{ syndicate.url }}">{{ syndicate.name }}</a>
+</li>{% endfor %}
 </ul>
 </li>
 
 </ul>
-
 </footer>
 
 </article>
