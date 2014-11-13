@@ -11,6 +11,7 @@ A base jekyll layout that is designed to pair with [gitpub](https://github.com/b
 - Running servers should be [mostly] optional.
 - As external services die off, the primary content should still remain in tact.
 
+
 - All posts start as a note and can be enhanced with yaml front-matter
 - Post types are differentiated by how they are displayed
 - Temporal posts can contain (usually) a single 'item'
@@ -18,6 +19,7 @@ A base jekyll layout that is designed to pair with [gitpub](https://github.com/b
 - Items are just meta-data that can be stored in front-matter
 - Item data should be provided externally from git
 - Posts can be enhanced with optional meta-data
+
 
 - Clients should only have to load a single CSS file.
 - Clients should only have to find a single script entry point.
