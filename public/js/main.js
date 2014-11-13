@@ -1,5 +1,8 @@
+---
+---
+
 requirejs.config({
-  baseUrl: 'public/js',
+  baseUrl: '{{ site.baseurl }}/public/js',
   paths: {
     prefixfree: '//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min',
     leaflet: '//cdn.leafletjs.com/leaflet-0.7.3/leaflet',
