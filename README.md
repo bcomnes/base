@@ -231,6 +231,21 @@ TODO: Figure out how to handle CSS and themes.  It would be nice to connect the 
 
 Due to the mixed content nature of the item stream, a JS library loader is needed to accommodate the flexibility of what one might want in the post stream.  See [`enhanceEach`](https://waterpigs.co.uk/notes/4WZHhH/).
 
+### Global Included Libraries
+
+- [Require.js](http://requirejs.org)
+- [Prefixfree](http://leaverou.github.io/prefixfree/)
+- [Fragmention](https://github.com/chapmanu/fragmentions)
+
+### Dyanmicaly loaded JS Libraries
+
+These libraries are loaded only when an element on the page indicates that they are needed.  This is acehived by [`enhanceEach`](https://waterpigs.co.uk/notes/4WZHhH/).
+
+- Leaflet
+- [Insert embed loader here]
+- [Insert Improved html5 video/audio player]
+- ...
+
 ## Appcache
 
 TODO: Fix appcache. See [alistapart](http://alistapart.com/article/application-cache-is-a-douchebag#section7) on appcache.
