@@ -10,8 +10,6 @@ A base jekyll layout that is designed to pair with [gitpub](https://github.com/b
 - Static sites should be flexible to the needs of the publisher.
 - Running servers should be [mostly] optional.
 - As external services die off, the primary content should still remain in tact.
-
-
 - All posts start as a note and can be enhanced with yaml front-matter
 - Post types are differentiated by how they are displayed
 - Temporal posts can contain (usually) a single 'item'
@@ -19,8 +17,6 @@ A base jekyll layout that is designed to pair with [gitpub](https://github.com/b
 - Items are just meta-data that can be stored in front-matter
 - Item data should be provided externally from git
 - Posts can be enhanced with optional meta-data
-
-
 - Clients should only have to load a single CSS file.
 - Clients should only have to find a single script entry point.
 - External assets are kept out of the repository.
@@ -246,6 +242,8 @@ TODO: Figure out how to handle CSS and themes.  It would be nice to connect the 
 
 Due to the mixed content nature of the item stream, a JS library loader is needed to accommodate the flexibility of what one might want in the post stream.  See [`enhanceEach`](https://waterpigs.co.uk/notes/4WZHhH/).
 
+Can `enhanceEach` be accomplished with [Browserify]()?
+
 ### Global Included Libraries
 
 - [Require.js](http://requirejs.org)
@@ -256,9 +254,11 @@ Due to the mixed content nature of the item stream, a JS library loader is neede
 
 These libraries are loaded only when an element on the page indicates that they are needed.  This is acehived by [`enhanceEach`](https://waterpigs.co.uk/notes/4WZHhH/).
 
-- Leaflet
+- [Leaflet](http://leafletjs.com/)
 - [Insert embed loader here]
 - [Insert Improved html5 video/audio player]
+- [webcomponents](http://webcomponents.org/polyfills/)
+- [smoothState.js](http://weblinc.github.io/jquery.smoothState.js/)
 - ...
 
 ## Appcache
