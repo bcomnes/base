@@ -21,7 +21,7 @@ A base jekyll layout that is designed to pair with [gitpub](https://github.com/b
 - Clients should only have to find a single script entry point.
 - External assets are kept out of the repository.
 - External assets are loaded from a CDN.
-- Layout and CSS should stand mostly on its own and not reply on a massive generalized framework.
+- Layout and CSS should stand mostly on its own and not rely on a massive generalized framework.
 - Data that depends on external JS libraries should present something useful if those libraries fail to load.
 
 ## Base Front-Matter Definitions and Behaviors
